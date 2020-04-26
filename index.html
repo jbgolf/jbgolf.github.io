@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>  
+  
+  <body>
+   
+   <div class="tab_content">
+     <input type="radio" name="tabmenu" id="tab01" checked>
+     <label for="tab01">1st Half</label>
+
+     <input type="radio" name="tabmenu" id="tab02">
+     <label for="tab02">2nd Half</label>
+<!-- tabmenue 세개중 한개만 선택되게 , checked 하나가 먼저 선택되어 있게 -->
+
+<!-- score 입력 function -->    
+     <script>
+      function displynum(n1)
+      { 
+      scorecard.txt0.value=n1;
+      }
+      </script>
+
+
+<div class="conbox con1"> <!--1st Half Tab -->
+
+<!-- 지도이미지 -->
+
+<img src = "Tanjong_C_Vilage.gif" width=100%>
+<!-- PC내 이미지파일 주소. 같은 폴더내에 있으면 그 이후 주소만 -->
+
+<!--Score Table -->
+<style>
+table, th, td {border : 1px solid blue; border-collapse:collapse;}
+table {width: 100%}
+table {height: 300px}
+td {text-align: center;}
+</style>
+<table> 
+<tr><th>HOLE</th><th>HID</th><th>PAR</th><th>Golfer1</th><th>Golfer2</th><th>Golfer3</th><th>Golfer4</th></tr>
+<tr><th>1</th><th>3</th><th>4</th>
+<th>
+  <!-- score 상자 -->
+    <span id="a" onclick="popup('BB')"> <!-- 여긴 왜 '' 이게드가나 -->
+    <form name=scorecard>
+    <input type=text name=txt0 style="width:30px; height:30px;">
+    </form> </span>
+    </th>
+    <th>G2H1</th><th>G3H1</th><th>G4H1</th></tr>
+<tr><th>2</th><th>9</th><th>4</th><th>G1H2</th><th>G2H2</th><th>G3H2</th><th>G4H2</th></tr>
+<tr><th>3</th><th>11</th><th>5</th><th>G1H3</th><th>G2H3</th><th>G3H3</th><th>G4H3</th></tr>
+<tr><th>4</th><th>7</th><th>4</th><th>G1H4</th><th>G2H4</th><th>G3H4</th><th>G4H4</th></tr>
+<tr><th>5</th><th>15</th><th>3</th><th>G1H5</th><th>G2H5</th><th>G3H5</th><th>G4H5</th></tr>
+<tr><th>6</th><th>1</th><th>4</th><th>G1H6</th><th>G2H6</th><th>G3H6</th><th>G4H6</th></tr>
+<tr><th>7</th><th>5</th><th>4</th><th>G1H7</th><th>G2H7</th><th>G3H7</th><th>G4H7</th></tr>
+<tr><th>8</th><th>17</th><th>3</th><th>G1H8</th><th>G2H8</th><th>G3H8</th><th>G4H8</th></tr>
+<tr><th>9</th><th>13</th><th>5</th><th>G1H9</th><th>G2H9</th><th>G3H9</th><th>G4H9</th></tr>
+</table>
+</div>
+
+<div class="conbox con2"> <!--2nd Half Tab -->
+       컨탠츠탭 내용2 
+       
+</div>
+
+     <!-- conbox라는 공통 class에 con1,2 라는 박스 -->
+   </div>
+
+   <style>
+    input[type="radio"] {display:none;}
+
+    input[type="radio"] + label {display:inline-block;padding:20px;background:#ccc;color:#999;font-size:14px;}
+
+    input[type="radio"]:checked + label {background:#088A08;color:000;}
+
+    .conbox {width:500px;height:600px;background:#088A08;margin:0 auto;display:none;}
+
+    input[id="tab01"]:checked ~ .con1 {display:block;}
+    input[id="tab02"]:checked ~ .con2 {display:block;}
+   </style>
+
+ <!-- score 입력 버튼 -->
+    <span id="BB" onclick="dipopup()" > 
+    <form name=scoreentertable>
+      <input type=button name=btn-3 value=-3 onclick="displynum(-3)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn-2 value=-2 onclick="displynum(-2)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn-1 value=-1 onclick="displynum(-1)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn0 value=0 onclick="displynum(0)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn+1 value=+1 onclick="displynum(+1)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn+2 value=+2 onclick="displynum(+2)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn+2 value=+2 onclick="displynum(+3)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn+2 value=+2 onclick="displynum(+4)" style="width:40px; height:40px;"><br>
+    </form> </span>
+
+    <!-- score 입력 button function -->
+      <script>
+      document.getElementById("BB").style.display = 'None';
+
+      function popup(tab) 
+      {
+      document.getElementById("BB").style.display = 'None';
+      document.getElementById(tab).style.display = 'block';
+      }
+      function dipopup() 
+      {
+      document.getElementById("BB").style.display = 'None';
+      }
+
+      </script>
+  </body>
+</html>
