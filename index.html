@@ -36,10 +36,27 @@
 <!--Score Table -->
 <style>
 table, th, td {border : 1px solid blue; border-collapse:collapse;}
-table {width: 100%}
-table {height: 300px}
+table {width: 100%; height: 400px; z-index:100;}
 td {text-align: center;}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{ -webkit-appearance: none; margin:0; }
+input[type=number]
+{border: 2px solid black; text-align: center;}
+
+input[type="radio"] {display:none;}
+input[type="radio"] + label {display:inline-block;padding:20px;background:#ccc;color:#999;font-size:14px;}
+input[type="radio"]:checked + label {background:#088A08;color:000;}
+.conbox {width:500px;height:600px;background:#088A08;margin:0 auto;display:none;}
+
+input[id="tab01"]:checked ~ .con1 {display:block;}
+input[id="tab02"]:checked ~ .con2 {display:block;}
+
+span[id="BB"] {position:absolute; top:100px;}
 </style>
+<!-- conbox라는 공통 class에 con1,2 라는 박스 -->
+
 <table> 
 <tr><th>HOLE</th><th>HID</th><th>PAR</th><th>Golfer1</th><th>Golfer2</th><th>Golfer3</th><th>Golfer4</th></tr>
 <tr><th>1</th><th>3</th><th>4</th>
@@ -47,7 +64,7 @@ td {text-align: center;}
   <!-- score 상자 -->
     <span id="a" onclick="popup('BB')"> <!-- 여긴 왜 '' 이게드가나 -->
     <form name=scorecard>
-    <input type=text name=txt0 style="width:30px; height:30px;">
+    <input type=number name=txt0 style="width:30px; height:30px;">
     </form> </span>
     </th>
     <th>G2H1</th><th>G3H1</th><th>G4H1</th></tr>
@@ -67,24 +84,13 @@ td {text-align: center;}
        
 </div>
 
-     <!-- conbox라는 공통 class에 con1,2 라는 박스 -->
+     
    </div>
 
-   <style>
-    input[type="radio"] {display:none;}
 
-    input[type="radio"] + label {display:inline-block;padding:20px;background:#ccc;color:#999;font-size:14px;}
-
-    input[type="radio"]:checked + label {background:#088A08;color:000;}
-
-    .conbox {width:500px;height:600px;background:#088A08;margin:0 auto;display:none;}
-
-    input[id="tab01"]:checked ~ .con1 {display:block;}
-    input[id="tab02"]:checked ~ .con2 {display:block;}
-   </style>
 
  <!-- score 입력 버튼 -->
-    <span id="BB" onclick="dipopup()" > 
+    <span id="BB" onclick="dipopup()" onclick=> 
     <form name=scoreentertable>
       <input type=button name=btn-3 value=-3 onclick="displynum(-3)" style="width:40px; height:40px;"><br>
       <input type=button name=btn-2 value=-2 onclick="displynum(-2)" style="width:40px; height:40px;"><br>
@@ -92,8 +98,8 @@ td {text-align: center;}
       <input type=button name=btn0 value=0 onclick="displynum(0)" style="width:40px; height:40px;"><br>
       <input type=button name=btn+1 value=+1 onclick="displynum(+1)" style="width:40px; height:40px;"><br>
       <input type=button name=btn+2 value=+2 onclick="displynum(+2)" style="width:40px; height:40px;"><br>
-      <input type=button name=btn+2 value=+2 onclick="displynum(+3)" style="width:40px; height:40px;"><br>
-      <input type=button name=btn+2 value=+2 onclick="displynum(+4)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn+3 value=+3 onclick="displynum(+3)" style="width:40px; height:40px;"><br>
+      <input type=button name=btn+4 value=+4 onclick="displynum(+4)" style="width:40px; height:40px;"><br>
     </form> </span>
 
     <!-- score 입력 button function -->
@@ -104,6 +110,7 @@ td {text-align: center;}
       {
       document.getElementById("BB").style.display = 'None';
       document.getElementById(tab).style.display = 'block';
+      document.getElementById("a").style.border = 'solid blue';
       }
       function dipopup() 
       {
