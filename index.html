@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Tanjong_C</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>  
   
@@ -33,16 +33,21 @@
 <img src = "Tanjong_C_Vilage.gif" width=100%>
 <!-- PC내 이미지파일 주소. 같은 폴더내에 있으면 그 이후 주소만 -->
 
+<!-- 이제 필요없음 number를 select으로 변경
+<style> 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{ -webkit-appearance: none; margin:0; }
+
+</style>
+-->
 <!--Score Table -->
 <style>
 table, th, td {border : 1px solid blue; border-collapse:collapse;}
 table {width: 100%; height: 400px; z-index:100;}
 td {text-align: center;}
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{ -webkit-appearance: none; margin:0; }
-input[type=number]
+input[type=select]
 {border: 2px solid black; text-align: center;}
 
 input[type="radio"] {display:none;}
@@ -64,10 +69,12 @@ span[id="BB"] {position:absolute; top:100px;}
   <!-- score 상자 -->
     <span id="a" onclick="popup('BB')"> <!-- 여긴 왜 '' 이게드가나 -->
     <form name=scorecard>
-    <input type=number name=txt0 style="width:30px; height:30px;">
+    <input type="select" name=txt0 style="width:30px; height:30px;">
     </form> </span>
     </th>
-    <th>G2H1</th><th>G3H1</th><th>G4H1</th></tr>
+    <th>G2H1</th>
+    <th>G3H1</th>
+    <th>G4H1</th></tr>
 <tr><th>2</th><th>9</th><th>4</th><th>G1H2</th><th>G2H2</th><th>G3H2</th><th>G4H2</th></tr>
 <tr><th>3</th><th>11</th><th>5</th><th>G1H3</th><th>G2H3</th><th>G3H3</th><th>G4H3</th></tr>
 <tr><th>4</th><th>7</th><th>4</th><th>G1H4</th><th>G2H4</th><th>G3H4</th><th>G4H4</th></tr>
